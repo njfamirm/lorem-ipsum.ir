@@ -7,7 +7,8 @@ on:
 
   push:
     branches:
-      - ws/*
+      - main
+      - next
 
   pull_request:
     paths:
@@ -29,17 +30,16 @@ jobs:
       fail-fast: true
       matrix:
         include:
-          - image: 12fy-ws
-            description: Alwatr 12fy website.
-            siteUrl: https://12fy.alwatr.ir
-            # NGINX_FORCE_DOMAIN: 12fy.alwatr.ir
-            # NGINX_FORCE_DOMAIN_STATUS: 302
-            noIndex: 1
+          - image: lorem-ipsum-ws
+            description: lorem-ipsum.ir website.
+            siteUrl: https://www.lorem-ipsum.ir
+            NGINX_FORCE_DOMAIN: www.lorem-ipsum.ir
+            NGINX_FORCE_DOMAIN_STATUS: 302
 
-          - image: 12fy-ws-beta
-            description: Alwatr 12fy beta website.
-            siteUrl: https://beta.12fy.alwatr.ir
-            # NGINX_FORCE_DOMAIN: beta.12fy.alwatr.ir
+          - image: lorem-ipsum-ws-beta
+            description: lorem-ipsum.ir beta website.
+            siteUrl: https://beta.lorem-ipsum.ir
+            # NGINX_FORCE_DOMAIN: beta.lorem-ipsum.ir
             # NGINX_FORCE_DOMAIN_STATUS: 302
             noIndex: 1
 
