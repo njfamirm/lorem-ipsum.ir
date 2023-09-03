@@ -7,18 +7,23 @@
   "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "f": "yarn format",
+    "dp": "run-s build:production deploy:production",
+    "ds": "run-s build:staging deploy:staging",
     "s": "yarn start",
     "w": "yarn start",
     "b": "yarn build",
+    "bp": "yarn build:production",
+    "bs": "yarn build:stage",
     "c": "yarn clean",
     "cb": "run-s clean build",
-    "format": "run-s format:*",
-    "format:prettier": "prettier . --ignore-path .gitignore --write",
     "start": "eleventy --serve",
     "watch": "yarn start",
     "clean": "rm -rf dist",
-    "build": "eleventy"
+    "build": "eleventy",
+    "build:production": "siteUrl='https://www.lorem-ipsum.ir' NODE_ENV='production' MY_ENVIRONMENT=production run-s clean build",
+    "build:staging": "siteUrl='https://beta.lorem-ipsum.ir' NODE_ENV='production' MY_ENVIRONMENT=production noIndex=1 run-s clean build",
+    "deploy:production": "wrangler pages deploy --branch=main --project-name=lorem-ipsum-ir dist",
+    "deploy:staging": "wrangler pages deploy --branch=main --project-name=beta-lorem-ipsum-ir dist"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -30,7 +35,8 @@
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^9.1.3",
     "prettier": "^3.0.3",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "wrangler": "^3.6.0"
   },
   "packageManager": "yarn@3.6.3"
 }
