@@ -4,7 +4,7 @@
     {% include "meta.njk" %}
     <link rel="stylesheet" href="/style.css?v={{ git.shortSha }}">
   </head>
-  <body>
+  <body class="bg-white">
     {% include "header.njk" %}
     {% include "nav.njk" %}
     {{ content | safe }}
