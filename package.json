@@ -1,9 +1,9 @@
 {
-  "name": "12fy",
+  "name": "lorem-ipsum.ir",
   "version": "0.0.0",
-  "description": "12fy MPA base structure",
+  "description": "lorem-ipsum.ir website.",
   "main": "index.js",
-  "repository": "git@github.com:njfamirm/12fy.git",
+  "repository": "git@github.com:njfamirm/lorem-ipsum.ir.git",
   "author": "S. Amir Mohammad Najafi <njfamirm@gmail.com>",
   "license": "MIT",
   "scripts": {
