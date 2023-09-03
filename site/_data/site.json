@@ -3,8 +3,8 @@
   "description": "Khafangzj website.",
   "author": "Alwatr",
   "defaultSocialImage": "/img/meta/social.jpg",
-  "locale": "en",
-  "dir": "ltr",
+  "locale": "fa",
+  "dir": "rtl",
   "theme": {
     "dark": "#673ab7",
     "light": "#673ab7",
