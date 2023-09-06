@@ -14,7 +14,9 @@ ENV noIndex $noIndex
 
 RUN apk add --no-cache git
 
-COPY package.json *.lock ./
+COPY package.json *.lock .yarnrc.yml ./
+COPY .yarn .yarn
+
 RUN if [ -f *.lock ]; then \
       yarn install --immutable; \
     else \
