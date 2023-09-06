@@ -8,21 +8,24 @@ ARG noIndex=0
 
 WORKDIR /app
 
-ENV NODE_ENV production
 ENV MY_ENVIRONMENT production
 ENV siteUrl $siteUrl
 ENV noIndex $noIndex
 
 RUN apk add --no-cache git
 
-COPY package.json *.lock ./
+COPY package.json *.lock .yarnrc.yml ./
+COPY .yarn .yarn
+
 RUN if [ -f *.lock ]; then \
-      yarn install --frozen-lockfile --non-interactive --production false; \
+      yarn install --immutable; \
     else \
-      yarn install --non-interactive --production false; \
+      yarn install; \
     fi;
 
 COPY . .
+
+ENV NODE_ENV production
 
 RUN yarn build
 
