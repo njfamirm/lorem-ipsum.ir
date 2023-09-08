@@ -8,6 +8,7 @@ eleventyExcludeFromCollections: true
     <url>
       <loc>{{ env.siteUrl }}{{ page.url | url }}</loc>
       <lastmod>{{ page.date.toISOString() }}</lastmod>
+      <changefreq>{{ item.data.sitemapChangefreq | default("monthly") }}</changefreq>
       <priority>{{ page.data.priority | default(1) }}</priority>
     </url>
   {% endfor %}

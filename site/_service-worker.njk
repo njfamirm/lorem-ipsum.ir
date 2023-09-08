@@ -1,9 +1,9 @@
 ---
-permalink: /service-worker.js
+permalink: false
 eleventyExcludeFromCollections: true
 ---
 {% set js %}
-  {% include "./_js/service-worker.js" %}
+  {# {% include "./_js/service-worker.ts" %} #}
 {% endset %}
 
 {{ js | esbuild | safe }}

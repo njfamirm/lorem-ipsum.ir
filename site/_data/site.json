@@ -1,7 +1,7 @@
 {
   "title": "لورم ایپسوم",
   "description": "وبسایت لورم ایپسوم فارسی.",
-  "author": "Alwatr",
+  "author": {"name": "lorem-ipsum-ir", "email": "info@lorem-ipsum.ir", "url": "https://www.lorem-ipsum.ir"},
   "defaultSocialImage": "/img/meta/social.jpg",
   "locale": "fa",
   "dir": "rtl",
@@ -9,5 +9,6 @@
     "dark": "#673ab7",
     "light": "#673ab7",
     "splashBackground": "#ffff"
-  }
+  },
+  "googleAnalyticsKey": ""
 }

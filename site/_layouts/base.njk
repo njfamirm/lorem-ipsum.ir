@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ site.locale }}" dir="{{ site.dir }}" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="{{ site.locale }}" dir="{{ site.dir }}">
   <head>
     {% include "meta.njk" %}
     <link rel="stylesheet" href="/style.css?v={{ git.shortSha }}">
   </head>
+
   <body class="bg-white">
     {% include "header.njk" %}
     {% include "nav.njk" %}
@@ -11,5 +12,6 @@
     {% include "footer.njk" %}
 
     <script src="/script.js?v={{ git.shortSha }}"></script>
+    {% include "google-analytics.njk" %}
   </body>
 </html>
