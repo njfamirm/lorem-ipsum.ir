@@ -33,6 +33,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@11ty/eleventy-plugin-directory-output@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@11ty/eleventy-plugin-directory-output@npm:1.0.1"
+  dependencies:
+    kleur: ^4.1.4
+    strip-color: ^0.1.0
+  checksum: 0e8404192f1adf7f728924861395777e359ec783656ccbc2f45177b973e11fe5719ac0ad2a665c41ccd436090cd2970fd942b19ec15b9a4f54bd8bf14858e803
+  languageName: node
+  linkType: hard
+
+"@11ty/eleventy-plugin-rss@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@11ty/eleventy-plugin-rss@npm:1.2.0"
+  dependencies:
+    debug: ^4.3.4
+    posthtml: ^0.16.6
+    posthtml-urls: 1.0.0
+  checksum: e122a8483f353fa49ed40dd150c59efbc191e34e868a24ab62aba0ac16b8c1b2904c1c79fd717eea2286a98a68c3910221637fe5fdaa61ffcb66f34912a191ec
+  languageName: node
+  linkType: hard
+
 "@11ty/eleventy-utils@npm:^1.0.1":
   version: 1.0.1
   resolution: "@11ty/eleventy-utils@npm:1.0.1"
@@ -3570,7 +3591,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kleur@npm:^4.1.5":
+"kleur@npm:^4.1.4, kleur@npm:^4.1.5":
   version: 4.1.5
   resolution: "kleur@npm:4.1.5"
   checksum: 1dc476e32741acf0b1b5b0627ffd0d722e342c1b0da14de3e8ae97821327ca08f9fb944542fb3c126d90ac5f27f9d804edbe7c585bf7d12ef495d115e0f22c12
@@ -3657,6 +3678,8 @@ __metadata:
   resolution: "lorem-ipsum.ir@workspace:."
   dependencies:
     "@11ty/eleventy": ^2.0.1
+    "@11ty/eleventy-plugin-directory-output": ^1.0.1
+    "@11ty/eleventy-plugin-rss": ^1.2.0
     "@swc/html": ^0.0.28
     cssnano: ^6.0.1
     esbuild: ^0.19.2
@@ -5192,7 +5215,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"posthtml-urls@npm:^1.0.0":
+"posthtml-urls@npm:1.0.0, posthtml-urls@npm:^1.0.0":
   version: 1.0.0
   resolution: "posthtml-urls@npm:1.0.0"
   dependencies:
@@ -6066,6 +6089,13 @@ __metadata:
   version: 3.0.0
   resolution: "strip-bom@npm:3.0.0"
   checksum: 8d50ff27b7ebe5ecc78f1fe1e00fcdff7af014e73cf724b46fb81ef889eeb1015fc5184b64e81a2efe002180f3ba431bdd77e300da5c6685d702780fbf0c8d5b
+  languageName: node
+  linkType: hard
+
+"strip-color@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "strip-color@npm:0.1.0"
+  checksum: d2cf582348c91f9ea9cceb53a0f712beb879f96094e8d37da12d75a1d016b44ff77cb8c1fb31cd5814936fa5e1b4a509970b23e71a50567e2264dade09a314b2
   languageName: node
   linkType: hard
 
