@@ -1,4 +1,28 @@
-const {transform} = require('esbuild');
+const {build, transform} = require('esbuild');
+const {env} = require('process');
+
+const debugMode = env.NODE_ENV !== 'production';
+async function esbuildBuild() {
+  try {
+    await build({
+      entryPoints: ['site/_js/script.ts', 'site/_js/service-worker.ts'],
+      outdir: 'dist/',
+      logLevel: 'info',
+      platform: 'browser',
+      target: 'es2018',
+      format: 'esm',
+      minify: true,
+      treeShaking: true,
+      sourcemap: debugMode,
+      bundle: true,
+      charset: 'utf8',
+      legalComments: 'none',
+      // splitting: true,
+    });
+  } catch (err) {
+    console.error('esbuildBuild Error: ', err);
+  }
+}
 
 async function esbuildTransform(content) {
   try {
@@ -8,8 +32,8 @@ async function esbuildTransform(content) {
       target: 'es2018',
       format: 'esm',
       minify: true,
-      // treeShaking: true,
-      // sourcemap: true,
+      treeShaking: true,
+      sourcemap: debugMode,
       // bundle: true,
       // splitting: true,
       charset: 'utf8',
@@ -23,4 +47,4 @@ async function esbuildTransform(content) {
   }
 }
 
-module.exports = {esbuildTransform};
+module.exports = {esbuildBuild, esbuildTransform};

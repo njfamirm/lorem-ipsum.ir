@@ -1,6 +1,8 @@
 const {minifyHtml} = require('./config/minify-html');
 const {postcssProcess} = require('./config/postcss.js');
-const {esbuildTransform} = require('./config/esbuild.js');
+const pluginRss = require('@11ty/eleventy-plugin-rss');
+const {esbuildTransform, esbuildBuild} = require('./config/esbuild.js');
+const directoryOutputPlugin = require('@11ty/eleventy-plugin-directory-output');
 
 /**
  * 11ty configuration.
@@ -13,7 +15,20 @@ module.exports = function (eleventyConfig) {
     'assets/img/meta/favicon.ico': '/favicon.ico',
   });
 
+  eleventyConfig.setQuietMode(true);
+
   eleventyConfig.addWatchTarget('./site/');
+
+  eleventyConfig.on("eleventy.before", esbuildBuild);
+
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(directoryOutputPlugin, {
+    columns: {
+      filesize: true,
+      benchmark: true,
+    },
+    warningFileSize: 400 * 1000,
+  });
 
   eleventyConfig.addAsyncFilter('postcss', postcssProcess);
   eleventyConfig.addAsyncFilter('esbuild', esbuildTransform);

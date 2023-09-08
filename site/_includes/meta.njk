@@ -7,70 +7,70 @@
 {% endif %}
 
 <title>{{ pageTitle }}</title>
-<link rel="canonical" href="{{ currentUrl }}" />
+<link rel="canonical" href="{{ canonical or currentUrl }}"/>
 
-<meta charset="utf-8" />
+<meta charset="utf-8"/>
 
-<link rel="preload" as="script" href="/script.js?v={{ git.shortSha }}" fetchpriority="high" />
+<link rel="preload" as="script" href="/script.js?v={{ git.shortSha }}" fetchpriority="high"/>
 
-<link rel="preload" as="style" href="/style.css?v={{ git.shortSha }}" fetchpriority="high" />
+<link rel="preload" as="style" href="/style.css?v={{ git.shortSha }}" fetchpriority="high"/>
 <link media="print" rel="stylesheet" href="/style.css?v={{ git.shortSha }}" onload="this.media='all';this.onload=null;"/>
 
-<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="manifest" href="/manifest.webmanifest"/>
+{# <link rel="alternate" title="Blog Posts" type=application/atom+xml href="/feed.atom"> #}
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<meta name="color-scheme" content="light dark" />
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ site.theme.light }}" />
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ site.theme.dark }}" />
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=yes, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark"/>
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ site.theme.light }}"/>
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ site.theme.dark }}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=yes, viewport-fit=cover"/>
 
-<meta name="application-name" content="{{ site.title }}" />
-<meta property="og:site_name" content="{{ site.title }}" />
-<meta property="og:title" content="{{ pageTitle }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ currentUrl }}" />
+<meta name="application-name" content="{{ site.title }}"/>
+<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="og:title" content="{{ pageTitle }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ currentUrl }}"/>
 
-{% set socialImage = sharing_image or thumbnail or hero or site.defaultSocialImage %}
+{% set socialImage = coverImage or sharing_image or thumbnail or hero or site.defaultSocialImage %}
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="{{ socialImage }}" />
-<meta property="og:image" content="{{ socialImage }}" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/{{ socialImage }}"/>
+<meta property="og:image" content="/{{ socialImage }}"/>
 
 {% if socialImageAlt %}
-<meta property="og:image:alt" content="{{ alt }}" />
-<meta name="twitter:image:alt" content="{{ alt }}" />
+  <meta property="og:image:alt" content="{{ socialImageAlt }}"/>
+  <meta name="twitter:image:alt" content="{{ socialImageAlt }}"/>
 {% endif %}
 
-<meta name="description" content="{{ description }}" />
-<meta name="twitter:description" content="{{ description }}" />
-<meta property="og:description" content="{{ description }}" />
+<meta name="description" content="{{ description }}"/>
+<meta name="twitter:description" content="{{ description }}"/>
+<meta property="og:description" content="{{ description }}"/>
 
-{% if social.twitter %}
-<meta name="twitter:site" content="@{{ social.twitter }}" />
+{% if contact.twitter %}
+  <meta name="twitter:site" content="@{{ contact.twitter }}"/>
+  <meta name="twitter:creator" content="@{{ contact.twitter }}"/>
 {% endif %}
-<meta name="twitter:creator" content="@alidotmd" />
 
-{% if authors %}
-  <meta name="authors" content="{{ authors | sort }}" />
-{% endif %}
+<meta name="authors" content="{{ authors or site.author.name | sort }}"/>
 
 {% if tags %}
-  <meta name="tags" content="{{ tags | sort }}" />
+  <meta name="tags" content="{{ tags | sort }}"/>
 {% endif %}
 
-<link rel="icon" type="image/png" sizes="32x32" href="/img/meta/icon-32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/img/meta/icon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/meta/icon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/meta/icon-16.png"/>
 
 <!-- Add to home screen for Chrome on Android. Fallback for manifest.json -->
-<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes"/>
 
 <!-- Add to home screen for Safari on iOS -->
-<link rel="apple-touch-icon" size="180x180" href="/img/meta/icon-180.png" />
-<link rel="apple-touch-startup-image" size="192x192" href="/img/meta/icon-192.png" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="{{ site.title }}" />
+<link rel="apple-touch-icon" href="/img/meta/icon-180.png"/>
+<link rel="apple-touch-startup-image" href="/img/meta/icon-192.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="{{ site.title }}"/>
 
 <!-- Tile icon for Windows 8 (144x144 + tile color) -->
-<meta name="msapplication-TileImage" content="/img/meta/icon-512.png" />
-<meta name="msapplication-TileColor" content="{{ site.theme.light }}" />
-<meta name="msapplication-tap-highlight" content="no" />
+<meta name="msapplication-TileImage" content="/img/meta/icon-512.png"/>
+<meta name="msapplication-TileColor" content="{{ site.theme.light }}"/>
+<meta name="msapplication-tap-highlight" content="no"/>

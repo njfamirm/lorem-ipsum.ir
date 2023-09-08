@@ -1,10 +1,8 @@
 ---
-permalink: /script.js
+permalink: false
 eleventyExcludeFromCollections: true
 ---
 {% set js %}
-  {% include "./_js/banner.js" %}
-  {% include "./_js/register-service-worker.js" %}
 {% endset %}
 
 {{ js | esbuild | safe }}
