@@ -23,7 +23,7 @@ body{
     margin-top: 80px;
 }
 .logo img{
-    height: 100%; 
+    height: 100%;
     width: auto;
     max-width: 100%;
     padding: 2px;
@@ -32,8 +32,8 @@ body{
     margin-top: -5px;
 }
 .menu {
-    height: 60px; 
-    width: calc(100% - 900px); 
+    height: 60px;
+    width: calc(100% - 900px);
     float: right;
     margin-right: 10px;
 }
@@ -57,7 +57,7 @@ body{
 }
 .search-bar {
     height: 60px;
-    width: 250px; 
+    width: 250px;
     margin-right: 10px;
 }
 #search-input{
@@ -132,7 +132,7 @@ body{
     margin-bottom: 12px;
     display: block;
     margin-left: 80px;
-} 
+}
 .footer-box p{
     color: #fff;
     font-size: 15px;
@@ -161,7 +161,7 @@ body{
 }
 .footer-newsletter-box {
     text-align: center;
-    
+
 }
 .newsletter input[type=text]{
     background: #fff;
