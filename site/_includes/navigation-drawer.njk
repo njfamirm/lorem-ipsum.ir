@@ -1,10 +1,7 @@
 <nav class="navigation-drawer flex flex-col items-center w-3/4 md:w-2/5 h-screen fixed px-4 pt-14 gap-5 z-40 bg-white transform-gpu -translate-x-full rtl:translate-x-full transition-transform">
-  <a class="w-full" href="{{ contact.phone.url }}">
-    <button class="w-full border font-semibold focus:outline-none px-6 py-2 leading-6 rounded border-yellow-500 bg-yellow-500 text-white hover:text-white hover:bg-amber-600 hover:border-yellow-300 focus:ring focus:ring-yellow-700 focus:ring-opacity-50 active:bg-yellow-500 active:border-yellow-500">Call us</button>
-  </a>
   <div class="flex flex-col justify-end gap-4 items-center text-md font-bold">
     {% for menu in collections.all | eleventyNavigation %}
-      <a class="text-neutral-700 hidden lg:block hover:text-neutral-700 hover:no-underline {% if page.url == menu.url %} text-neutral-950 {% endif %}" href="{{ menu.url }}">
+      <a class="text-neutral-700 hover:text-neutral-700 hover:no-underline {% if page.url == menu.url %} text-neutral-950 {% endif %}" href="{{ menu.url }}">
         {{ menu.key }}
       </a>
     {% endfor %}
