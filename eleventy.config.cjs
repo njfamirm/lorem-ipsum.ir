@@ -3,6 +3,7 @@ const {postcssProcess} = require('./config/postcss.js');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const {esbuildTransform, esbuildBuild} = require('./config/esbuild.js');
 const directoryOutputPlugin = require('@11ty/eleventy-plugin-directory-output');
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 /**
  * 11ty configuration.
@@ -21,6 +22,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.on("eleventy.before", esbuildBuild);
 
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(directoryOutputPlugin, {
     columns: {
