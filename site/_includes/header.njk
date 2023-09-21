@@ -1,4 +1,4 @@
-{# <header class="header flex flex-row justify-between items-center w-screen fixed px-4 py-4 gap-10 z-20">
+<header class="header flex flex-row justify-between items-center w-screen fixed px-4 py-4 gap-10 z-20">
   <a href="/"><img class="w-10" src="/img/logo.png" alt="logo"></a>
   <div class="flex flex-row justify-end grow gap-8 items-center text-md font-bold">
     {% for menu in collections.all | eleventyNavigation %}
@@ -10,7 +10,4 @@
       <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
     </span>
   </div>
-  <a class="hidden md:block" href="{{ contact.phone.url }}">
-    <button class="border font-semibold focus:outline-none px-6 py-2 leading-6 rounded border-yellow-500 bg-yellow-500 text-white hover:text-white hover:bg-amber-600 hover:border-yellow-300 focus:ring focus:ring-yellow-700 focus:ring-opacity-50 active:bg-yellow-500 active:border-yellow-500">Call us</button>
-  </a>
-</header> #}
+</header>
