@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+  push:
+    tags:
+      - v*
+
+env:
+  NODE_VERSION: lts/*
+
+jobs:
+  build-lint-ts:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: ⤵️ Checkout repository
+        uses: actions/checkout@v4.0.0
+
+      - name: 🏗 Setup nodejs
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - name: 🏗 Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: 🚀 Build Typescript
+        run: yarn build:production
+
+      - name: 🙌🏻 Deploy with wrangler
+        run: yarn deploy:production
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
