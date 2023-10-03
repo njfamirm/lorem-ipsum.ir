@@ -75,5 +75,5 @@
     // "diagnostics": true,
   },
   "exclude": [],
-  "include": ["site/_js/*.ts"]
+  "include": ["site/_js/**/*.ts", "site/_js/**/*.json"]
 }
