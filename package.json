@@ -15,6 +15,8 @@
     "b": "yarn build",
     "f": "yarn format",
     "l": "yarn lint",
+    "rl": "run-s clean build release pt dp",
+    "pt": "git push --follow-tags origin main",
     "bp": "yarn build:production",
     "bs": "yarn build:stage",
     "c": "yarn clean",
@@ -33,7 +35,8 @@
     "build:production": "siteUrl='https://www.lorem-ipsum.ir' NODE_ENV='production' MY_ENVIRONMENT=production run-s clean build",
     "build:staging": "siteUrl='https://beta.lorem-ipsum.ir' NODE_ENV='production' MY_ENVIRONMENT=production noIndex=1 run-s clean build",
     "deploy:production": "wrangler pages deploy --branch=main --project-name=lorem-ipsum-ir dist",
-    "deploy:staging": "wrangler pages deploy --branch=main --project-name=beta-lorem-ipsum-ir dist"
+    "deploy:staging": "wrangler pages deploy --branch=main --project-name=beta-lorem-ipsum-ir dist",
+    "release": "standard-version -s"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -60,6 +63,7 @@
     "postcss-preset-env": "^9.1.4",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.5",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^3.3.3",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",

@@ -1,0 +1,14 @@
+{
+  "header": "# [Lorem-Ipsum Website Changelog](https://lorem-ipsum.ir)",
+  "types": [
+    {"type": "feat", "section": "Features"},
+    {"type": "fix", "section": "Bug Fixes"},
+    {"type": "docs", "section": "Blog Post"},
+    {"type": "refactor", "section": "Refactor"},
+    {"type": "perf", "section": "Performance"},
+    {"type": "chore", "hidden": true},
+    {"type": "style", "hidden": true},
+    {"type": "test", "hidden": true}
+  ],
+  "releaseCommitMessageFormat": "release: {{currentTag}}"
+}
