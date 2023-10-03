@@ -31,7 +31,7 @@ if (menuButton != null && bodyOverlay != null && navigationDrawer != null) {
 
         bodyOverlay.style.display = 'none';
         bodyOverlay.style.backgroundColor = 'transparent';
-      }, {once: true}
+      }, {once: true},
     );
   });
 }

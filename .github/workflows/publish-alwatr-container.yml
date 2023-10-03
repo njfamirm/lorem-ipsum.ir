@@ -32,14 +32,10 @@ jobs:
           - image: lorem-ipsum-ws
             description: lorem-ipsum.ir website.
             siteUrl: https://www.lorem-ipsum.ir
-            NGINX_FORCE_DOMAIN: www.lorem-ipsum.ir
-            NGINX_FORCE_DOMAIN_STATUS: 302
 
           - image: lorem-ipsum-ws-beta
             description: lorem-ipsum.ir beta website.
             siteUrl: https://beta.lorem-ipsum.ir
-            # NGINX_FORCE_DOMAIN: beta.lorem-ipsum.ir
-            # NGINX_FORCE_DOMAIN_STATUS: 302
             noIndex: 1
 
     permissions:
@@ -95,8 +91,6 @@ jobs:
           build-args: |
             siteUrl=${{ matrix.siteUrl }}
             noIndex=${{ matrix.noIndex }}
-            NGINX_FORCE_DOMAIN=${{ matrix.NGINX_FORCE_DOMAIN }}
-            NGINX_FORCE_DOMAIN_STATUS=${{ matrix.NGINX_FORCE_DOMAIN_STATUS }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

@@ -1,7 +1,7 @@
-<header class="header flex flex-row justify-between items-center w-screen fixed p-6 gap-10 z-20 top-0">
+<header class="header flex flex-row justify-between items-center w-screen fixed px-6 py-3 gap-10 z-20 top-0">
   <a href="/"><img class="w-10" src="/img/logo.png" alt="logo"></a>
   <div class="flex flex-row justify-end grow gap-8 items-center text-md font-bold">
-    {% for menu in collections.all | eleventyNavigation %}
+    {% for menu in navigation.topAppBar %}
       <a class="text-neutral-700 hidden lg:block hover:text-neutral-700 hover:no-underline {% if page.url == menu.url %} text-neutral-950 {% endif %}" href="{{ menu.url }}">
         {{ menu.key }}
       </a>

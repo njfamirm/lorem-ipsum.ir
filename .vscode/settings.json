@@ -1,4 +1,19 @@
 {
+  "npm.packageManager": "yarn",
+  "lit-plugin.strict": true,
+  "files.exclude": {
+    "**/*.map": true,
+    "**/*.d.ts": true,
+    "**/*.tsbuildinfo": true
+  },
+  "files.associations": {
+    "*.njk": "html"
+  },
+  "markdownlint.ignore": ["**/CHANGELOG.md"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "git.autoStash": true,
+  "git.branchProtection": ["main"],
+  "githubPullRequests.ignoredPullRequestBranches": ["main"],
   "editor.wordWrapColumn": 120,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
@@ -8,15 +23,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.useEditorConfig": true,
   "cSpell.language": "en,fa,fa-IR",
-  "emmet.includeLanguages": {
-    "nunjucks": "html"
-  },
-  "[nunjucks]": {
-    "editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
-  },
-  "cSpell.words": [
-    "cssnano",
-    "tailwindcss",
-    "esbuild"
-  ]
+  "cSpell.ignoreRegExpList": ["{% end.*%}"],
+  "cSpell.words": ["cssnano", "tailwindcss", "esbuild"]
 }

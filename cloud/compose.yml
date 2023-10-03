@@ -19,6 +19,7 @@ services:
 
     environment:
       - NGINX_ACCESS_LOG=${WEBSITE_ACCESS_LOG:-off}
+      - NGINX_FORCE_DOMAIN=${NGINX_FORCE_DOMAIN:-}
 
     logging:
       driver: json-file
