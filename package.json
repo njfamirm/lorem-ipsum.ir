@@ -13,6 +13,7 @@
     "s": "yarn start",
     "w": "yarn start",
     "b": "yarn build",
+    "f": "yarn format",
     "l": "yarn lint",
     "bp": "yarn build:production",
     "bs": "yarn build:stage",
