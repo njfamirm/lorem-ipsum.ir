@@ -1,25 +1,27 @@
-import persianLoremIpsum from './data/lorem-ipsum-fa.json';
+import loremIpsumFa from './data/lorem-ipsum-fa.json';
 
-interface LoremIpsum {
-  paragraph: string[];
-  sentence: string[];
-  word: string[];
-}
+import type {Lorem} from './type.js';
 
-const loremIpsumFa: LoremIpsum = persianLoremIpsum;
+/**
+ * List of available lorem ipsum data.
+ */
+const lorem: Record<string, Lorem> = {
+  default: loremIpsumFa,
+};
 
-const defaultLorem = loremIpsumFa;
-
+/**
+ * Generate lorem ipsum data.
+ */
 export function generateData(length: 'word' | 'sentence' | 'paragraph', count: number): string {
   let data = '';
   if (length === 'paragraph') {
-    data = defaultLorem.paragraph[0] + '\n';
+    data = lorem.default.paragraph[0] + '\n';
   }
   else if (length === 'sentence') {
-    data = defaultLorem.sentence[0] + '\n';
+    data = lorem.default.sentence[0] + '\n';
   }
   else {
-    data = defaultLorem.word[0] + ' ';
+    data = lorem.default.word[0] + ' ';
   }
 
   return data.repeat(+count).trim();
