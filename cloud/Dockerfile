@@ -33,13 +33,6 @@ RUN yarn build
 
 FROM ghcr.io/alimd/nginx-ws:${ALWATR_NGINX_VERSION} as nginx
 
-
-ARG NGINX_FORCE_DOMAIN
-ARG NGINX_FORCE_DOMAIN_STATUS=302
-
-ENV NGINX_FORCE_DOMAIN $NGINX_FORCE_DOMAIN
-ENV NGINX_FORCE_DOMAIN_STATUS $NGINX_FORCE_DOMAIN_STATUS
-
 # Copy builded files from last stage
 COPY --from=builder /app/dist/ ./
 

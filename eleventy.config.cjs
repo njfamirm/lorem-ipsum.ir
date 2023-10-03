@@ -1,9 +1,11 @@
-const {minifyHtml} = require('./config/minify-html');
-const {postcssProcess} = require('./config/postcss.js');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const {esbuildTransform, esbuildBuild} = require('./config/esbuild.js');
 const directoryOutputPlugin = require('@11ty/eleventy-plugin-directory-output');
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const pluginRss = require('@11ty/eleventy-plugin-rss');
+const {markdown} = require('./config/markdown.js');
+const {esbuildTransform, esbuildBuild} = require('./config/esbuild.js');
+const {postcssProcess} = require('./config/postcss.js');
+const {loadIcon} = require('./shortcode/alwatr-icon.js');
+const {image} = require('./shortcode/image.js');
+const {minifyHtml} = require('./config/minify-html');
 
 /**
  * 11ty configuration.
@@ -12,17 +14,17 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
  */
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
-    'assets': '/',
+    assets: '/',
     'assets/img/meta/favicon.ico': '/favicon.ico',
   });
 
   eleventyConfig.setQuietMode(true);
-
   eleventyConfig.addWatchTarget('./site/');
 
-  eleventyConfig.on("eleventy.before", esbuildBuild);
+  eleventyConfig.on('eleventy.before', esbuildBuild);
 
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.setLibrary('md', markdown);
+
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(directoryOutputPlugin, {
     columns: {
@@ -32,8 +34,12 @@ module.exports = function (eleventyConfig) {
     warningFileSize: 400 * 1000,
   });
 
+  eleventyConfig.addFilter('trimer', (content) => content.trim());
   eleventyConfig.addAsyncFilter('postcss', postcssProcess);
   eleventyConfig.addAsyncFilter('esbuild', esbuildTransform);
+
+  eleventyConfig.addShortcode('alwatrIcon', loadIcon);
+  eleventyConfig.addShortcode('image', image);
 
   eleventyConfig.addTransform('minifyHtml', minifyHtml);
   eleventyConfig.addTransform('trimer', (content) => content.trim());
@@ -41,7 +47,7 @@ module.exports = function (eleventyConfig) {
   return {
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
-    templateFormats: ['njk', '11ty.js'],
+    templateFormats: ['njk', '11ty.js', 'md'],
     dir: {
       input: 'site',
       output: 'dist',

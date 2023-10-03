@@ -19,7 +19,7 @@ const swcHtmlOptions = {
   sortAttributes: true,
   tagOmission: false,
   selfClosingVoidElements: true,
-};
+  };
 
 async function minifyHtml(content) {
   if (!this.page.outputPath || !this.page.outputPath.endsWith('.html')) return content;

@@ -1,7 +1,7 @@
 <nav class="navigation-drawer flex flex-col items-center w-3/4 md:w-2/5 h-screen fixed px-4 pt-14 gap-5 z-40 bg-white transform-gpu -translate-x-full rtl:translate-x-full transition-transform">
   <div class="flex flex-col justify-end gap-4 items-center text-md font-bold">
-    {% for menu in collections.all | eleventyNavigation %}
-      <a class="text-neutral-700 hover:text-neutral-700 hover:no-underline {% if page.url == menu.url %} text-neutral-950 {% endif %}" href="{{ menu.url }}">
+    {% for menu in navigation.topAppBar %}
+      <a class="text-neutral-700 hidden lg:block hover:text-neutral-700 hover:no-underline {% if page.url == menu.url %} text-neutral-950 {% endif %}" href="{{ menu.url }}">
         {{ menu.key }}
       </a>
     {% endfor %}

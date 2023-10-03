@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/style.css?v={{ git.shortSha }}">
   </head>
 
-  <body class="bg-white text-black selection:bg-black selection:text-white">
+  <body class="bg-white text-black font-vazirmatn selection:bg-black selection:text-white">
     {% include "header.njk" %}
     {% include "navigation-drawer.njk" %}
     {{ content | safe }}
@@ -13,5 +13,6 @@
 
     <script src="/script.js?v={{ git.shortSha }}"></script>
     {% include "google-analytics.njk" %}
+    {% include "structured-data/breadcrumb.njk" %}
   </body>
 </html>
