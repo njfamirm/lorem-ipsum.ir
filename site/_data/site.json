@@ -6,8 +6,8 @@
   "locale": "fa",
   "dir": "rtl",
   "theme": {
-    "dark": "#673ab7",
-    "light": "#673ab7",
+    "dark": "#000000",
+    "light": "#000000",
     "splashBackground": "#ffff"
   },
   "googleAnalyticsKey": ""
