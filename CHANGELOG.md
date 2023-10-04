@@ -1,4 +1,6 @@
 # [Lorem-Ipsum Website Changelog](https://lorem-ipsum.ir)
+### [0.1.1](https://github.com/njfamirm/lorem-ipsum.ir/compare/v0.1.0...v0.1.1) (2023-10-04)
+
 ## 0.1.0 (2023-10-03)
 
 
