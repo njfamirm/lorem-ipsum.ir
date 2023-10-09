@@ -46,7 +46,7 @@
     "@alwatr/icon-set-material": "^0.1.1",
     "@alwatr/style": "^1.2.0",
     "@swc/html": "^0.0.28",
-    "@types/node": "^20.8.2",
+    "@types/node": "^20.8.3",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "cssnano": "^6.0.1",
@@ -67,7 +67,7 @@
     "tailwindcss": "^3.3.3",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "wrangler": "^3.10.1"
+    "wrangler": "^3.11.0"
   },
   "packageManager": "yarn@3.6.3"
 }
