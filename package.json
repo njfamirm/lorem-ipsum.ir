@@ -48,7 +48,7 @@
     "@swc/html": "^0.0.28",
     "@types/node": "^20.8.2",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.5",
     "cssnano": "^6.0.1",
     "esbuild": "^0.19.4",
     "eslint": "^8.49.0",
