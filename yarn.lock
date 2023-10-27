@@ -45,9 +45,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@11ty/eleventy-img@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@11ty/eleventy-img@npm:3.1.1"
+"@11ty/eleventy-img@npm:^3.1.6":
+  version: 3.1.6
+  resolution: "@11ty/eleventy-img@npm:3.1.6"
   dependencies:
     "@11ty/eleventy-fetch": ^4.0.0
     debug: ^4.3.4
@@ -55,7 +55,7 @@ __metadata:
     image-size: ^1.0.2
     p-queue: ^6.6.2
     sharp: ^0.32.6
-  checksum: 8440240b14c8d016fdda313efc8156077c69ced28e270d63cec38fc610b735ebc3711e0afdac5ae1532fcb961dfb0eeef1f8088334087fdea7c6df69fc5602ac
+  checksum: e725da410ce671d1aebb05706f194b4967c0937a60c64edb09c39bcfbd7b35c3c571b7c003fdfcb103b765b1cd0947993820b80685b28587f169efad67831119
   languageName: node
   linkType: hard
 
@@ -5205,7 +5205,7 @@ __metadata:
   resolution: "lorem-ipsum.ir@workspace:."
   dependencies:
     "@11ty/eleventy": ^2.0.1
-    "@11ty/eleventy-img": ^3.1.1
+    "@11ty/eleventy-img": ^3.1.6
     "@11ty/eleventy-plugin-directory-output": ^1.0.1
     "@11ty/eleventy-plugin-rss": ^1.2.0
     "@alwatr/icon-set-material": ^0.1.1
