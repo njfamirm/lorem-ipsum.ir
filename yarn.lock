@@ -158,10 +158,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@alwatr/icon-set-material@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "@alwatr/icon-set-material@npm:0.1.1"
-  checksum: d130a8c85721343f751096d19a51cd2abdfa170ca8f04b2eceb073be699a4afa6b195ddcc3973adf96c457834cd1b4d502a11c767cf182b16a0859e2eb3fe206
+"@alwatr/icon-set-material@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@alwatr/icon-set-material@npm:1.0.0"
+  checksum: 37ceabec66cdd60de7ace15d8e3e870a8d545a067b0ee2eb0d429ab2b7f210e8b5b9fe229b7ddece4237ef3df01f1051af0bae626e16953436cfd6b95f4ac82a
   languageName: node
   linkType: hard
 
@@ -5208,7 +5208,7 @@ __metadata:
     "@11ty/eleventy-img": ^3.1.1
     "@11ty/eleventy-plugin-directory-output": ^1.0.1
     "@11ty/eleventy-plugin-rss": ^1.2.0
-    "@alwatr/icon-set-material": ^0.1.1
+    "@alwatr/icon-set-material": ^1.0.0
     "@alwatr/style": ^1.2.0
     "@swc/html": ^0.0.28
     "@types/node": ^20.8.2

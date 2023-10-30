@@ -43,7 +43,7 @@
     "@11ty/eleventy-img": "^3.1.1",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@alwatr/icon-set-material": "^0.1.1",
+    "@alwatr/icon-set-material": "^1.0.0",
     "@alwatr/style": "^1.2.0",
     "@swc/html": "^0.0.28",
     "@types/node": "^20.8.2",
