@@ -1,6 +1,7 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
+
 updates:
   - package-ecosystem: github-actions
     directory: /
@@ -8,7 +9,7 @@ updates:
     reviewers:
       - njfamirm
     schedule:
-      interval: daily
+      interval: weekly
     labels:
       - ci
       - priority-low
@@ -25,7 +26,7 @@ updates:
     reviewers:
       - njfamirm
     schedule:
-      interval: daily
+      interval: weekly
     labels:
       - dependencies
       - ci
@@ -34,10 +35,15 @@ updates:
     groups:
       production-dependencies:
         dependency-type: 'production'
+        exclude-patterns:
+          - '@alwatr/*'
+          - 'fract'
       development-dependencies:
         dependency-type: 'development'
         exclude-patterns:
-          - '*lint*'
-      lint-dependencies:
+          - '@alwatr/*'
+          - 'fract'
+      alwatr-dependencies:
         patterns:
-          - '*lint*'
+          - '@alwatr/*'
+          - 'fract'
