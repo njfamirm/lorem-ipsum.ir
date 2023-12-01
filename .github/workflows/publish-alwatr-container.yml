@@ -33,11 +33,6 @@ jobs:
             description: lorem-ipsum.ir website.
             siteUrl: https://www.lorem-ipsum.ir
 
-          - image: lorem-ipsum-ws-beta
-            description: lorem-ipsum.ir beta website.
-            siteUrl: https://beta.lorem-ipsum.ir
-            noIndex: 1
-
     permissions:
       contents: read
       packages: write
