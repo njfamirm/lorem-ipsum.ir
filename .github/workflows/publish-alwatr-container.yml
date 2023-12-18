@@ -57,7 +57,7 @@ jobs:
 
       - name: 🏗 Extract metadata
         id: meta
-        uses: docker/metadata-action@v5.2.0
+        uses: docker/metadata-action@v5.4.0
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           images: name=${{ env.REGISTRY }}/${{ env.USERNAME }}/${{ matrix.image }},enable=true
@@ -91,7 +91,7 @@ jobs:
 
       - name: 🏗 Install cosign
         if: ${{ github.event_name != 'pull_request' }}
-        uses: sigstore/cosign-installer@v3.2.0
+        uses: sigstore/cosign-installer@v3.3.0
 
       - name: 🏗 Sign the published container image
         if: ${{github.event_name != 'pull_request'}}
