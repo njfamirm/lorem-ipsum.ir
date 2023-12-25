@@ -44,7 +44,7 @@
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@alwatr/icon-set-material": "^2.0.1",
-    "@alwatr/style": "^2.0.2",
+    "@alwatr/style": "^2.0.3",
     "@swc/html": "^0.0.28",
     "@types/node": "^20.10.4",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
